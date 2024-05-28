@@ -52,7 +52,8 @@ POST /api/surveys
   "id": 0,
   "title": "string",
   "createdBy": 0,
-  "description": "string"
+  "description": "string",
+  "createdAt": "string"
 }
 ```
 
@@ -117,6 +118,7 @@ GET /api/surveys
 |» title|string¦null|false|none||none|
 |» createdBy|integer¦null|false|none||none|
 |» description|string¦null|false|none||none|
+|» createdAt|string¦null|false|none||none|
 
 ## GET getSurveyById
 
@@ -158,7 +160,8 @@ PUT /api/surveys/{id}
   "id": 0,
   "title": "string",
   "createdBy": 0,
-  "description": "string"
+  "description": "string",
+  "createdAt": "string"
 }
 ```
 
@@ -254,6 +257,52 @@ GET /api/surveys/user/{userId}
 |» title|string¦null|false|none||none|
 |» createdBy|integer¦null|false|none||none|
 |» description|string¦null|false|none||none|
+|» createdAt|string¦null|false|none||none|
+
+## GET getSurveysByUserIdSorted
+
+GET /api/surveys/user/{userId}/sorted
+
+### 请求参数
+
+|名称|位置|类型|必选|说明|
+|---|---|---|---|---|
+|userId|path|string| 是 |none|
+
+> 返回示例
+
+> 成功
+
+```json
+[
+  {
+    "id": 0,
+    "title": "",
+    "createdBy": 0,
+    "description": "",
+    "createdAt": ""
+  }
+]
+```
+
+### 返回结果
+
+|状态码|状态码含义|说明|数据模型|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|Inline|
+
+### 返回数据结构
+
+状态码 **200**
+
+|名称|类型|必选|约束|中文名|说明|
+|---|---|---|---|---|---|
+|*anonymous*|[[List«SurveyDto»](#schemalist«surveydto»)]|false|none||none|
+|» id|integer¦null|false|none||none|
+|» title|string¦null|false|none||none|
+|» createdBy|integer¦null|false|none||none|
+|» description|string¦null|false|none||none|
+|» createdAt|string¦null|false|none||none|
 
 # wjx/ResponseController
 
@@ -960,7 +1009,8 @@ DELETE /api/options/{id}
   "id": 0,
   "title": "string",
   "createdBy": 0,
-  "description": "string"
+  "description": "string",
+  "createdAt": "string"
 }
 
 ```
@@ -973,6 +1023,7 @@ DELETE /api/options/{id}
 |title|string¦null|false|none||none|
 |createdBy|integer¦null|false|none||none|
 |description|string¦null|false|none||none|
+|createdAt|string¦null|false|none||none|
 
 <h2 id="tocS_Tag">Tag</h2>
 
@@ -1058,7 +1109,8 @@ DELETE /api/options/{id}
   "id": 0,
   "title": "string",
   "createdBy": 0,
-  "description": "string"
+  "description": "string",
+  "createdAt": "string"
 }
 
 ```
@@ -1071,6 +1123,7 @@ DELETE /api/options/{id}
 |title|string¦null|false|none||none|
 |createdBy|integer¦null|false|none||none|
 |description|string¦null|false|none||none|
+|createdAt|string¦null|false|none||none|
 
 <h2 id="tocS_Category">Category</h2>
 
@@ -1156,7 +1209,8 @@ DELETE /api/options/{id}
   "id": 0,
   "title": "string",
   "createdBy": 0,
-  "description": "string"
+  "description": "string",
+  "createdAt": "string"
 }
 
 ```
@@ -1169,6 +1223,7 @@ DELETE /api/options/{id}
 |title|string¦null|false|none||none|
 |createdBy|integer¦null|false|none||none|
 |description|string¦null|false|none||none|
+|createdAt|string¦null|false|none||none|
 
 <h2 id="tocS_UserDto">UserDto</h2>
 
