@@ -857,6 +857,43 @@ DELETE /api/options/{id}
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|[ResponseEntity«?»](#schemaresponseentity«?»)|
 
+# wjx/LoginController
+
+## POST login
+
+POST /api/users/login
+
+> Body 请求参数
+
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
+
+### 请求参数
+
+|名称|位置|类型|必选|说明|
+|---|---|---|---|---|
+|body|body|[LoginDto](#schemalogindto)| 否 |none|
+
+> 返回示例
+
+> 成功
+
+```json
+{
+  "token": ""
+}
+```
+
+### 返回结果
+
+|状态码|状态码含义|说明|数据模型|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|[ResponseEntity«LoginResponse»](#schemaresponseentity«loginresponse»)|
+
 # 数据模型
 
 <h2 id="tocS_OptionDto">OptionDto</h2>
@@ -1047,6 +1084,28 @@ DELETE /api/options/{id}
 |id|integer(int64)|false|none||标签ID编号|
 |name|string|false|none||标签名称|
 
+<h2 id="tocS_LoginDto">LoginDto</h2>
+
+<a id="schemalogindto"></a>
+<a id="schema_LoginDto"></a>
+<a id="tocSlogindto"></a>
+<a id="tocslogindto"></a>
+
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+
+```
+
+### 属性
+
+|名称|类型|必选|约束|中文名|说明|
+|---|---|---|---|---|---|
+|email|string¦null|false|none||none|
+|password|string¦null|false|none||none|
+
 <h2 id="tocS_Question">Question</h2>
 
 <a id="schemaquestion"></a>
@@ -1146,6 +1205,26 @@ DELETE /api/options/{id}
 |---|---|---|---|---|---|
 |id|integer(int64)|false|none||分组ID编号|
 |name|string|false|none||分组名称|
+
+<h2 id="tocS_ResponseEntity«LoginResponse»">ResponseEntity«LoginResponse»</h2>
+
+<a id="schemaresponseentity«loginresponse»"></a>
+<a id="schema_ResponseEntity«LoginResponse»"></a>
+<a id="tocSresponseentity«loginresponse»"></a>
+<a id="tocsresponseentity«loginresponse»"></a>
+
+```json
+{
+  "token": "string"
+}
+
+```
+
+### 属性
+
+|名称|类型|必选|约束|中文名|说明|
+|---|---|---|---|---|---|
+|token|string¦null|false|none||none|
 
 <h2 id="tocS_ResponseEntity«Question»">ResponseEntity«Question»</h2>
 
