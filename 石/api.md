@@ -1,3 +1,5 @@
+# Authentication
+
 # wjx/UserController
 
 ## POST registerUser
@@ -209,6 +211,49 @@ DELETE /api/surveys/{id}
 |状态码|状态码含义|说明|数据模型|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|[ResponseEntity«?»](#schemaresponseentity«?»)|
+
+## GET getSurveysByUserId
+
+GET /api/surveys/user/{userId}
+
+### 请求参数
+
+|名称|位置|类型|必选|说明|
+|---|---|---|---|---|
+|userId|path|string| 是 |none|
+
+> 返回示例
+
+> 成功
+
+```json
+[
+  {
+    "id": 0,
+    "title": "",
+    "createdBy": 0,
+    "description": ""
+  }
+]
+```
+
+### 返回结果
+
+|状态码|状态码含义|说明|数据模型|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|成功|Inline|
+
+### 返回数据结构
+
+状态码 **200**
+
+|名称|类型|必选|约束|中文名|说明|
+|---|---|---|---|---|---|
+|*anonymous*|[[List«SurveyDto»](#schemalist«surveydto»)]|false|none||none|
+|» id|integer¦null|false|none||none|
+|» title|string¦null|false|none||none|
+|» createdBy|integer¦null|false|none||none|
+|» description|string¦null|false|none||none|
 
 # wjx/ResponseController
 
